@@ -1,9 +1,13 @@
-import Card from './Card'
+import Card from '../UI/Card'
 import ExpenseDate from './ExpenseDate'
 import './ExpenseItem.css'
 import './Expenses.css'
 
 export default function ExpenseItem(props) {
+
+  const clickHandler = () => {
+    console.log('Clicked!');
+  }
 
   return (
     <div className='expenses'>
@@ -14,6 +18,7 @@ export default function ExpenseItem(props) {
             <h2>{item.title}</h2>
             <div className='expense-item__price'>${item.amount}</div>
           </div>
+          <button onClick={clickHandler}>Change Title</button>
         </Card>
       ))}
     </div>
